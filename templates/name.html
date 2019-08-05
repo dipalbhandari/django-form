@@ -1,0 +1,523 @@
+{% load static %}
+
+<!DOCTYPE html>       
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Static Example</title>
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" type="text/css" href="{%static 'css/main.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+
+    <!-- Tempus Dominus Bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+
+
+
+        
+
+       
+    </head>
+    <body>
+
+
+
+
+<script type="text/javascript">
+
+
+
+      
+
+
+function Hide() {
+
+
+
+ 
+
+  if(document.getElementById('id_mediaSource').options[document.getElementById('id_mediaSource').selectedIndex].value == "0") {
+
+
+        
+               document.getElementById('category').style.display = '';
+               document.getElementById('video_id').style.display = 'none';
+               document.getElementById('audio_id').style.display = 'none';
+               document.getElementById('audio_video').style.display = 'none';
+        
+
+
+
+
+
+
+         if(document.getElementById('id_category').options[document.getElementById('id_category').selectedIndex].value == "0"){
+
+           document.getElementById('categories').style.display = 'none';
+           document.getElementById('series').style.display = '';
+           
+
+         }
+         else{
+           document.getElementById('series').style.display = 'none';
+           document.getElementById('categories').style.display = '';
+         }
+        
+
+
+
+
+
+    } 
+
+
+  else if (document.getElementById('id_mediaSource').options[document.getElementById('id_mediaSource').selectedIndex].value == "1"){
+
+      document.getElementById('series').style.display = 'none';
+      document.getElementById('categories').style.display = 'none';
+       document.getElementById('category').style.display = 'none';
+       document.getElementById('content').style.display = '';
+       document.getElementById('video_id').style.display = 'none';
+      document.getElementById('audio_id').style.display = 'none';
+      
+        
+       
+
+
+
+
+
+
+      if(document.getElementById('id_contain').options[document.getElementById('id_contain').selectedIndex].value == "0"){
+
+
+       document.getElementById('video_id').style.display = 'none';
+       document.getElementById('audio_id').style.display = '';
+       document.getElementById('audio_video').style.display = 'none';
+
+      
+
+      }
+
+      else if (document.getElementById('id_contain').options[document.getElementById('id_contain').selectedIndex].value == "1"){
+
+
+        document.getElementById('video_id').style.display = '';
+       document.getElementById('audio_id').style.display = 'none';
+       document.getElementById('audio_video').style.display = 'none';
+
+
+
+
+      }
+
+      else {
+        document.getElementById('audio_video').style.display = '';
+
+        document.getElementById('video_id').style.display = 'none';
+        document.getElementById('audio_id').style.display = 'none';
+
+
+      }
+
+
+    }
+
+    else{
+
+    }
+
+
+  if(document.getElementById('id_date').options[document.getElementById('id_date').selectedIndex].value == "0"){
+
+    document.getElementById('datetimepicker1').style.display = '';
+    document.getElementById('datetimepicker2').style.display = 'none';
+
+
+
+
+    }
+
+  else if(document.getElementById('id_date').options[document.getElementById('id_date').selectedIndex].value == "1"){
+
+    document.getElementById('datetimepicker2').style.display = '';
+    document.getElementById('datetimepicker1').style.display = 'none';
+  }
+
+
+
+
+  else{
+
+    document.getElementById('datetimepicker2').style.display = '';
+    document.getElementById('datetimepicker1').style.display = '';
+
+
+  }
+
+   
+
+
+
+  }
+
+
+
+</script>
+
+
+<div id="main" class="container">
+  
+
+   <form id="user_form"  method="post">
+  
+
+  <div class="row">
+    <div class="col-sm-2">
+       <label for= "form.mediaSource.id_for_label" onchange="Hide()">Media Source</label>
+    </div>
+    <div class="col-sm-2">
+        {% csrf_token %}
+
+       <div  id="media" onchange="Hide()" class="fieldWrapper mb-3">
+          {{ form.mediaSource.errors }}
+         
+       
+           {{ form.mediaSource }} 
+       
+         </div>
+    </div>
+    
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-sm-2">
+          <label onchange="Hide()" for="{{ form.contain.id_for_label">Content:</label>
+    </div>
+    <div class="col-sm-2">
+        
+      <div  id="content" onchange="Hide()" class="fieldWrapper mb-3">
+              {% csrf_token %}
+
+          {{ form.contain.errors }}
+
+             {{ form.contain }}
+
+         
+      </div>
+    </div>
+    
+  </div>
+
+<div id="category" class="row">
+    <div class="col-sm-2">
+          <label onchange="Hide()" for="{{ form.category.id_for_label }}">Category:</label>
+    </div>
+    <div class="col-sm-2">
+        
+      <div   onchange="Hide()" class="fieldWrapper mb-3">
+              {% csrf_token %}
+
+          {{ form.category.errors }}
+        
+          {{ form.category }}
+
+
+ 
+       </div>
+    </div>
+    
+  </div>
+
+    <div id ="series" class="row">
+    <div class="col-sm-2">
+          <label  for="{{ form.netSeries.id_for_label }}">Net Series:</label>
+    </div>
+    <div class="col-sm-2">
+        
+     <div   class="fieldWrapper mb-3">
+             {% csrf_token %}
+
+          {{ form.netSeries.errors }}
+        
+          {{ form.netSeries }}
+
+
+ 
+       </div>
+    </div>
+    
+  </div>
+
+  
+ <div id = "categories" class="row">
+    <div class="col-sm-2">
+          <label  onchange="Hide()"  for="{{ form.netCategories.id_for_label }}">Net Categories:</label>
+    </div>
+    <div class="col-sm-2">
+        
+     
+       <div  class="fieldWrapper mb-3">
+               {% csrf_token %}
+
+          {{ form.netCategories.errors }}
+        
+          {{ form.netCategories }}
+
+
+ 
+       </div>
+    </div>
+    
+  </div>
+      
+
+
+
+     
+    <div id="video_id"  class="row">
+    <div class="col-sm-2">
+          <label onchange="Hide()" for="{{ form.externalVideoSeries.id_for_label }}">External Video Series:</label>
+    </div>
+    <div class="col-sm-2">
+        
+      <div   class="fieldWrapper mb-3">
+              {% csrf_token %}
+
+          {{ form.externalVideoSeries.errors }}
+        
+          {{ form.externalVideoSeries }}
+
+
+ 
+      </div>
+    </div>
+    
+  </div>
+
+      
+    <div id="audio_id" class="row">
+    <div class="col-sm-2">
+         <label  onchange="Hide()" for="{{ form.externalAudioSeries.id_for_label }}">External Audio Series:</label>
+    </div>
+    <div class="col-sm-2">
+        
+      <div   class="fieldWrapper mb-3">
+              {% csrf_token %}
+
+          {{ form.externalAudioSeries.errors }}
+          
+        
+          {{ form.externalAudioSeries }}
+
+
+ 
+      </div>
+    </div>
+    
+  </div>
+
+
+
+     <div id="audio_video" class="row">
+    <div class="col-sm-2">
+                <label onchange="Hide()"  for="{{ form.externalAudioSeries.id_for_label }}">All:</label>
+
+    </div>
+    <div class="col-sm-2">
+        
+   
+      <div   class="fieldWrapper mb-3">
+              {% csrf_token %}
+
+          {{ form.both.errors }}
+        
+          {{ form.both }}
+
+
+ 
+       </div>
+    </div>
+    
+  </div>
+
+      
+
+    <div id="number_id" class="row">
+    <div class="col-sm-2">
+          <label onchange="Hide()"  for="{{ form.number.id_for_label }}">Number:</label>
+
+    </div>
+    <div class="col-sm-2">
+        
+   
+    
+      <div    class="fieldWrapper mb-3">
+              {% csrf_token %}
+
+          {{ form.date.errors }}
+        
+          {{ form.number }}
+
+
+ 
+      </div>
+    </div>
+    
+  </div>
+
+
+    <div id="date" class="row">
+    <div class="col-sm-2">
+          <label onchange="Hide()" for="{{ form.date.id_for_label }}">Date:</label>
+
+    </div>
+    <div class="col-sm-2">
+        
+   
+    
+   
+      <div    onchange="Hide()" class="form-group mb-3">
+          {{ form.date.errors }}
+        
+          {{ form.date }}
+
+
+ 
+      </div>
+    </div>
+    
+  </div>
+
+
+     
+
+  
+ <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+ Before:
+  {{ form.before }}
+
+   <div  class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+
+  <div class="input-group-text"><i class="fa fa-calendar"></i>
+  </div>
+ 
+  </div>
+</div>
+
+<script>
+  $(function () {
+    $("#datetimepicker1").datetimepicker({
+      format: 'DD/MM/YYYY HH:mm',
+    });
+  });
+</script>
+
+
+
+
+
+
+
+<div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+After:
+  {{ form.after }}
+  <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    $("#datetimepicker2").datetimepicker({
+      format: 'DD/MM/YYYY HH:mm',
+    });
+  });
+</script>
+
+
+
+    
+
+
+
+  <div>
+
+    <button id="id_submit" type="submit" class="btn btn-primary ">Submit</button>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+  </form>
+
+
+
+
+
+</div>
+
+
+
+
+
+   
+  
+
+    </body>
+
+
+
+
+
+
+
+
+</html>
